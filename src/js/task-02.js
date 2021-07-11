@@ -9,11 +9,10 @@ const ingredients = [
 
 const navRef = document.getElementById('ingredients');
 
-const arr = [];
-ingredients.forEach(value => {
+ingredients.map(value => {
+    const newArray = [];
     const linkRef = document.createElement('li');
     linkRef.textContent = value;
-    arr.push(linkRef.outerHTML);
-});
-const stringLinks = arr.join('');
-navRef.insertAdjacentHTML('afterbegin', stringLinks);
+    newArray.push(linkRef);
+    navRef.append(...newArray);
+  });
